@@ -1,9 +1,11 @@
 const express = require("express");
+const categoryQuestions = require("../data/tests");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  console.log("blablabla1");
-  res.status(200).json({ status: "okay" });
+  console.log(categoryQuestions);
+
+  res.status(200).json(categoryQuestions);
 });
 router.get("/category/:category", () => {
   console.log("blablabla2");
