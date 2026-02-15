@@ -1,13 +1,9 @@
 const express = require("express");
-const categoryQuestions = require("../data/tests");
 const router = express.Router();
+const testController = require("../controllers/testController");
 
-router.get("/", (req, res) => {
-  console.log(categoryQuestions);
+router.get("/", testController.getAllCategories);
 
-  res.status(200).json(categoryQuestions);
-});
-router.get("/category/:category", () => {
-  console.log("blablabla2");
-});
+router.get("/category/:id", testController.getCategoryById);
+
 module.exports = router;
