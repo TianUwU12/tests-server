@@ -3,7 +3,7 @@ const { categoryQuestions } = require("../data/tests");
 const testController = {
   getAllCategories: (req, res) => {
     try {
-      const summary = categoryQuestions.map(({ tasks, ...rest }) => rest);
+      const summary = categoryQuestions.map(({ ...rest }) => rest);
       res.status(200).json(summary);
     } catch (error) {
       res
