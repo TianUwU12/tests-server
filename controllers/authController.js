@@ -5,7 +5,9 @@ const jwt = require("jsonwebtoken");
 const authController = {
   register: async (req, res) => {
     try {
-      const { email, password, name } = req.body;
+      console.log(123);
+
+      const { email, password, name, nickname } = req.body;
 
       let user = await User.findOne({ email });
       if (user)
@@ -14,11 +16,13 @@ const authController = {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
 
-      user = new User({ email, password: hashedPassword, name });
+      user = new User({ email, password: hashedPassword, name, nickname });
       await user.save();
 
       res.status(201).json({ message: "Пользователь зарегистрирован" });
     } catch (error) {
+      console.log(error);
+
       res
         .status(500)
         .json({ message: "Ошибка при регистрации", error: error.message });
