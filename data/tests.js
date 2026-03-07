@@ -51,7 +51,7 @@ const categoryQuestions = [
     id: "boolean-queries",
     title: "Запросы для поисковых систем",
     level: "middle",
-    tasks: questions.ogeTask8Questions,
+    tasks: questions.ogeTask5Questions,
     theory: [
       "**Формула включений-исключений:** $N(A \cup B) = N(A) + N(B) - N(A \cap B)$.",
       "**Символы:** '|' (ИЛИ / объединение), '&' (И / пересечение).",
